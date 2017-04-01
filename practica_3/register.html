@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" >
+    <link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css">
+
+    <title>Práctica 3 - Aplicaciones Web</title>
+    <script src="js/jquery-1.11.1.min.js"  type="application/javascript"></script>
+    <script src="js/bootstrap.min.js" type="application/javascript"></script>
+    <script src="js/validate_app.js" type="application/javascript"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row main">
+        <div class="panel-heading">
+            <div class="panel-title text-center">
+                <h1 class="title">Mi Aplicación Web</h1>
+                <hr/>
+            </div>
+        </div>
+        <div class="main-login main-center">
+            <form class="form-horizontal" method="post" action="#">
+
+                <div class="form-group">
+                    <label for="name" class="cols-sm-2 control-label">Nombre</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" name="name" id="name"
+                                   placeholder="Indique su Nombre Completo"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="cols-sm-2 control-label">Email</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" name="email" id="email"
+                                   placeholder="Indique su Email" required/>
+                            <!--<img id="error_email" class="hidden" src="img/error.png" alt="Error" title="Error" />-->
+                            <!--<img id="ok_email" class="hidden" src="img/ok.png" alt="Ok" title="Ok" />-->
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="username" class="cols-sm-2 control-label">Usuario</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" name="username" id="username"
+                                   placeholder="Indique su Usuario"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="cols-sm-2 control-label">Contraseña</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                            <input type="password" class="form-control" name="password" id="password"
+                                   placeholder="Indique su Contraseña"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm" class="cols-sm-2 control-label">Confirme su Contraseña</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                            <input type="password" class="form-control" name="confirm" id="confirm"
+                                   placeholder="Confirme su Contraseña"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group ">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block login-button"
+                            onclick="return validaRegistro(this.form);">Registrar
+                    </button>
+                </div>
+                <div class="login-register">
+                    <a href="login.php">Iniciar Sesión</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script type="application/javascript">
+    document.getElementById('email').addEventListener("change", function () {
+        if ( !expr.test(this.value)){
+            alert("La dirección de correo " + this.value + " es incorrecta.");
+            document.getElementById('email').style.border = "1px solid red";
+            //document.getElementById('error_email').setAttribute("class", "show");
+            //document.getElementById('ok_email').setAttribute("class", "hidden");
+            this.focus();
+        }else{
+            document.getElementById('email').style.border = "1px solid green";
+            //document.getElementById('ok_email').setAttribute("class", "show");
+            //document.getElementById('error_email').setAttribute("class", "hidden");
+        }
+    }, false);
+</script>
+</html>
+<!-- This template has been downloaded from Bootsnipp.com. -->
